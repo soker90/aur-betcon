@@ -1,0 +1,34 @@
+sudo: required
+
+env:
+  - ARCH_TRAVIS_CLEAN_CHROOT=1
+  - ARCH_TRAVIS_CONFIRM_YES=1
+
+language: c
+
+compiler:
+  - gcc
+  - clang
+
+arch:
+  repos:
+    - archlinuxfr=http://repo.archlinux.fr/$arch
+  packages:
+    - procps-ng
+    - reflector
+    - python
+    - python-setuptools
+    - python-pyqt5
+    - sqlite
+    - python-pyexcel-ods
+    # aur
+    - screenfetch-git
+  script:
+    - "sudo screenfetch"
+    - "reflector --verbose -l 20 --sort rate -p https"
+    - "echo $CC"
+    - "touch test_file"
+    - "makepkg -i"
+
+script:
+  - "curl -s https://raw.githubusercontent.com/soker90/arch-travis/master/arch-travis.sh | bash"
