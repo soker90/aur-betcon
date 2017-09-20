@@ -31,4 +31,4 @@ arch:
     - "makepkg -i"
 
 script:
-  - "curl -s https://raw.githubusercontent.com/soker90/arch-travis/master/arch-travis.sh | bash"
+  - "curl -s https://raw.githubusercontent.com/soker90/paquetes-archinux/master/arch-travis.sh | bash"
