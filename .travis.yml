@@ -21,6 +21,7 @@ arch:
     - python-pyqt5
     - sqlite
     - python-pyexcel-ods
+    - python-yaml
     # aur
     - screenfetch-git
   script:
